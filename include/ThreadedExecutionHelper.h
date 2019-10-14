@@ -22,7 +22,7 @@ std::vector<R> parallelForImpl(Iter begin, Iter end, Functor &functor) {
 
 
 template <class R, class Iter, typename Functor>
-std::vector<R> parallelFor(Iter begin, Iter end, Functor &functor, int nbThreads) {
+std::vector<R> parallelFor(Iter begin, Iter end, Functor functor, int nbThreads) {
     std::vector<std::future<std::vector<R>>> futureResults;
     std::vector<R> aggregatedResult;
     int containerSize = end - begin;
